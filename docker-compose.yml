@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  radazin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/radazin
+      - radazin_static_volume:/radazin/static
+      - radazin_media_volume:/radazin/media
+    restart: always
+    ports:
+      - "8000:8000"
+    networks:
+      - radazin_network
+      - nginx_network
+    depends_on:
+      - postgresql
+  postgresql:
+    image: postgres:14.5
+    container_name: postgresql
+    volumes:
+      - radazin_postgresql_volume:/var/lib/postgresql/data
+    restart: always
+    env_file: .env
+    ports:
+      - "5432:5432"
+    networks:
+      - radazin_network
+
+volumes:
+  radazin_postgresql_volume:
+    external: true
+  radazin_static_volume:
+    external: true
+  radazin_media_volume:
+    external: true
+networks:
+  radazin_network:
+    external: true
+  nginx_network:
+    external: true
+

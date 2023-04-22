@@ -1,0 +1,13 @@
+# IDE
+.idea/
+__pycache__/
+
+# venv
+.venv/
+
+# Migrations
+applications/blog/migrations/
+
+# Media and Static
+media/
+static/

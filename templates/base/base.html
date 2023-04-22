@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+    <head>
+        {% load static %}
+		<meta charset="utf-8" />
+		<meta name="author" content="RADAZIN" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>فناوری اطلاعات راد آذین</title>
+
+        <!-- Custom CSS -->
+        <link href="{% static 'assets/css/styles.css' %}" rel="stylesheet">
+
+    </head>
+
+    <body dir="rtl">
+
+        <!-- ============================================================== -->
+        <!-- Main wrapper - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <div id="main-wrapper">
+
+            <!-- Log In Modal -->
+            {% include 'base/modals.html' %}
+			<!-- End Modal -->
+
+
+            <!-- ============================================================== -->
+            <!-- Top header  -->
+            <!-- ============================================================== -->
+            {% include 'base/header.html' %}
+			<!-- ============================================================== -->
+			<!-- Top header  -->
+			<!-- ============================================================== -->
+
+            {% block content %} {% endblock %}
+
+            <!-- ============================ Footer Start ================================== -->
+            {% include 'base/footer.html' %}
+			<!-- ============================ Footer End ================================== -->
+
+
+
+
+			<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Wrapper -->
+		<!-- ============================================================== -->
+
+		<!-- ============================================================== -->
+		<!-- All Jquery -->
+		<!-- ============================================================== -->
+		<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+		<script src="{% static 'assets/js/popper.min.js' %}"></script>
+		<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'assets/js/select2.min.js' %}"></script>
+		<script src="{% static 'assets/js/slick.js' %}"></script>
+		<script src="{% static 'assets/js/moment.min.js' %}"></script>
+		<script src="{% static 'assets/js/daterangepicker.js' %}"></script>
+		<script src="{% static 'assets/js/summernote.min.js' %}"></script>
+		<script src="{% static 'assets/js/metisMenu.min.js' %}"></script>
+		<script src="{% static 'assets/js/custom.js' %}"></script>
+		<!-- ============================================================== -->
+		<!-- This page plugins -->
+		<!-- ============================================================== -->
+
+	</body>
+
+</html>
